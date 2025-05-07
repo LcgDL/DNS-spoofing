@@ -25,6 +25,7 @@ def process_packet(packet):
 
     packet.accept()
 
+#Beginn of the program 
 queue = netfilterqueue.NetfilterQueue()
 queue.bind(0,process_packet)
 queue.run()
