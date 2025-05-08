@@ -25,7 +25,13 @@ def process_packet(packet):
 
     packet.accept()
 
-#Beginn of the program 
+#beginning of the program
+"""
+A NetfilterQueue() packet queue is created, 
+the queue is bound with identifier 0 
+(which corresponds to an iptables configuration to redirect packets to this queue), 
+and the packet handling process is executed by queue.run().
+"""
 queue = netfilterqueue.NetfilterQueue()
 queue.bind(0,process_packet)
 queue.run()
